@@ -4,7 +4,7 @@ function calculate() {
   let w = document.getElementById("leg").value;
   let t = document.getElementById("thick").value;
   let A = w * t;
-  let TPV = calculateTunsPerVolt(f, B, A);
+  let TPV = calculateTurnsPerVolt(f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
   document.getElementById("pri-n").value = TPV * priV;
