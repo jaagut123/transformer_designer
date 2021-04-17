@@ -7,8 +7,8 @@ function calculate() {
   let TPV = calculateTurnsPerVolt(f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
-  document.getElementById("pri-n").value = floor(TPV * priV + 1);
-  document.getElementById("sec-n").value = floor(TPV * secV + 1);
+  document.getElementById("pri-n").value = Math.floor(TPV * priV + 1);
+  document.getElementById("sec-n").value = Math.floor(TPV * secV + 1);
 }
 
 function calculateTurnsPerVolt(f, B, A) {
