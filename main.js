@@ -7,8 +7,8 @@ function calculate() {
   let TPV = calculateTunsPerVolt(f, B, A);
   let priV = getElementById("pri-v").value;
   let secV = getElementById("sec-v").value;
-  getElementById("pri-n).value = TPV * priV;
-  getElementById("sec-n).value = TPV * secV;
+  getElementById("pri-n").value = TPV * priV;
+  getElementById("sec-n").value = TPV * secV;
 }
 
 function calculateTurnsPerVolt(f, B, A) {
