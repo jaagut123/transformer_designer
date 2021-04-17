@@ -1,14 +1,14 @@
 function calculate() {
   let f = 60;
-  let B = document.getElementById("flux").value;
-  let w = document.getElementById("leg").value;
-  let t = document.getElementById("thick").value;
-  let A = w * t;
+  let B = document.getElementById("flux").value; // Tesla
+  let w = document.getElementById("leg").value; // mm
+  let t = document.getElementById("thick").value; // mm
+  let A = w * t / 1000000; // square meters
   let TPV = calculateTurnsPerVolt(f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
-  document.getElementById("pri-n").value = TPV * priV;
-  document.getElementById("sec-n").value = TPV * secV;
+  document.getElementById("pri-n").value = floor(TPV * priV + 1);
+  document.getElementById("sec-n").value = floor(TPV * secV + 1);
 }
 
 function calculateTurnsPerVolt(f, B, A) {
