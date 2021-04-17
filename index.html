@@ -26,29 +26,33 @@
     <tr><th>Iron Properties</th></tr>
     <tr>
       <td><label>Core's center leg width</label></td>
-      <td><input type="number" id="leg" step="0.1" value=25.4></td>
+      <td><input type="number" id="leg" step="0.1" value=25.4 min=0.1 max=25400></td>
     </tr>
     <tr>
       <td><label>Core's laminate stacking thickness</label></td>
-      <td><input type="number" id="thick" step="0.1" value=25.4></td>
+      <td><input type="number" id="thick" step="0.1" value=25.4 min=0.1 max=25400></td>
     </tr>
     <tr>
       <td><label>Core's iron maximum flux density (Tesla)</label></td>
-      <td><input type="number" id="flux" step="0.1" value=0.6></td>
+      <td><input type="number" id="flux" step="0.1" value=0.6 min=0.1 max=5.0></td>
     </tr>
-    <tr><th>Voltage Specifications</th></tr>
+    <tr><th>Voltage And Frequency Specifications</th></tr>
     <tr>
       <td><label>Primary voltage (Volts)</label></td>
-      <td><input type="number" id="pri-v" step="0.1" value=230></td>
+      <td><input type="number" id="pri-v" step="0.1" value=230 min=1 max=10000></td>
     </tr>
     <tr>
       <td><label>Secondary voltage (Volts)</label></td>
-      <td><input type="number" id="sec-v" step="0.1" value=35></td>
+      <td><input type="number" id="sec-v" step="0.1" value=35  min=1 max=10000></td>
+    </tr>
+    <tr>
+      <td><label>Line Frequency (Hertz)</label></td>
+      <td><input type="number" id="freq" value=60 min=1 max=1000000000></td>
     </tr>
     <tr><th>Winding Factors</th></tr>
     <tr>
       <td><label>Stacking Factor (%)</label></td>
-      <td><input type="number" id="stacking" value="10"></td>
+      <td><input type="number" id="stacking" value="10" min=1 max=99></td>
     </tr>
     <tr>
       <td><button id="calc" onclick="calculate()">Calculate</button></td>
