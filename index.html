@@ -54,7 +54,8 @@
       <td><input type="number" id="freq" value=60 min=1 max=1000000000></td>
     </tr>
     <tr>
-      <td><label>Wave Shape</label></td>
+      <td><label><div class="tooltip">Wave Shape>/div>
+        <span class="tooltiptext">For mains supply this is sine wave. For SMPS transformer, this is usually square wave.</scan></label></td>
       <td>
         <select id="shape" value="sine">
           <option value="sine">sine wave</option>
@@ -65,8 +66,8 @@
     <tr><th>Winding Factors</th></tr>
     <tr>
       <td><label><div class="tooltip">Stacking Factor (%)
-        <span class="tooltiptext">Stacking factor is the amount of gap between the laminates stacking
-        expressed in percentage.</span></div></label></td>
+        <span class="tooltiptext">For laminated core, stacking factor is the amount of gap between the laminate stackings
+        expressed in percentage. Since ferrite core or iron powder core has no laminates, this is 0.</span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=0 max=100></td>
     </tr>
     <tr>
