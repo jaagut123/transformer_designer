@@ -35,8 +35,9 @@
     <tr>
       <td><label><div class="tooltip">Core's iron maximum flux density (Tesla)
         <span class="tooltiptext">The maximum flux density plays an important role in the transformer.
-        It specifies the limit where the iron core starts to saturate. When the core saturates, it
-        becomes ineffective because it can no longer generate additional magnetic flux.</span>
+          It specifies the limit where the iron core starts to saturate. When the core saturates, it
+          becomes ineffective because it can no longer generate additional magnetic flux. Manufactuer's, 
+          data specifies the maximum flux density, so use it here. With no data, it defaults to 0.6 Tesla</span>
         </div></label></td>
       <td><input type="number" id="flux" step="0.1" value=0.6 min=0.1 max=5.0></td>
     </tr>
@@ -70,7 +71,7 @@
       <td><label><div class="tooltip">Stacking Factor (%)
         <span class="tooltiptext">For laminated core, stacking factor is the amount of gap 
           between the laminate stackings expressed in percentage, default is 10%. For ferrite core or 
-          iron powder core, since it has no laminates, this is 0.</span></div></label></td>
+          iron powder core, since it has no laminates, this should be 0.</span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=0 max=100></td>
     </tr>
     <tr>
