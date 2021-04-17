@@ -11,7 +11,7 @@ function recalc() {
   if (prevUnit=="in" && newUnit=="cm") factor = 2.54;
   document.getElementById("leg").value *= factor; 
   document.getElementById("thick").value *=  factor; 
-  
+  prevUnit = newUnit; // track current unit
 }
 
 function calculate() {
