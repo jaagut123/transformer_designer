@@ -10,15 +10,41 @@
 </head>
 <body>
   <h1>Welcome to my Transformer Designer Page</h1>
-  <form>
-    <label>Iron Properties</label>
-    <input type="text" id="leg" placeholder="center leg width">
-    <input type="text" id="thick" placeholder="laminate stacking thickness">
-    <input type="text" id="flux" placeholder="maximum flux density">
-    <label>Voltage Specifications</label>
-    <input type="text" id="pri-v" placeholder="primary voltage">
-    <input type="text" id="sec-v" placeholder="secondary voltage">
-    <button id="calc" onclick="" value="Calculate"></button>
-  </form>
+  <h3>Iron Properties</h3>
+  <table>
+    <tr><th>Iron Properties</th></tr>
+    <tr>
+      <td><label>Core's center leg width</label></td>
+      <td><input type="text" id="leg" placeholder="center leg width"></td>
+    </tr>
+    <tr>
+      <td><label>Core's laminate stacking thickness</label></td>
+      <td><input type="text" id="thick" placeholder="laminate stacking thickness"></td>
+    </tr>
+    <tr>
+      <td><label>Core's iron maximum flux density</label></td>
+      <td><input type="text" id="flux" placeholder="maximum flux density"></td>
+    </tr>
+    <tr><th>Voltage Specifications</th></tr>
+    <tr>
+      <td><label>Primary voltage</label></td>
+      <td><input type="text" id="pri-v" placeholder="primary voltage"></td>
+    </tr>
+    <tr>
+      <td><label>Secondary voltage</label></td>
+      <td><input type="text" id="sec-v" placeholder="secondary voltage"></td>
+    </tr>
+    <tr>
+      <td><button id="calc" onclick="calculate">Calculate</button></td>
+    </tr>
+    <tr>
+      <td><label>Calculated number of turns - primary</label></td>
+      <td><input type="text" id="pri-n" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Calculated number of turns - secondary</label></td>
+      <td><input type="text" id="sec-n" disabled></td>
+    </tr>
+    </table>  
 </body>
 </html>
