@@ -28,7 +28,7 @@ function calculate() {
   if (newUnit=="mm") factor = 1/1000; // mm to m
   if (newUnit=="cm") factor = 1/100; // cm to m
   if (newUnit=="in") factor = 2.54/100; // in to m
-  let A = sf/100 * w * t * factor*factor; // square meters
+  let A = (1-sf/100) * w * t * factor*factor; // square meters
   let TPV = calculateTurnsPerVolt(f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
