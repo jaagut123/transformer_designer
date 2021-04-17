@@ -19,12 +19,13 @@ function calculate() {
   let B = document.getElementById("flux").value; // Tesla
   let w = document.getElementById("leg").value;
   let t = document.getElementById("thick").value;
+  let sf = document.getElementById("stacking").value;
   let factor = 1; // factor to convert unit to meters
   let newUnit = document.getElementById("unit").value;
   if (newUnit=="mm") factor = 1/1000; // mm to m
   if (newUnit=="cm") factor = 1/100; // cm to m
   if (newUnit=="in") factor = 2.54/100; // in to m
-  let A = w * t * factor * factor; // square meters
+  let A = sf * w * t * factor * factor; // square meters
   let TPV = calculateTurnsPerVolt(f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
