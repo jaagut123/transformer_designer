@@ -12,27 +12,43 @@
   <h1>Welcome to my Transformer Designer Page</h1>
   <h3>Iron Properties</h3>
   <table>
+    <tr><th>Select Unit of Measurement</th></tr>
+    <tr>
+      <td>Unit of measurement</td>
+      <td>
+        <select id="unit" value="mm">
+          <option value="mm">mm</option>
+          <option value="cm">cm</option>
+          <option value="in">in</option>
+        </select>
+      </td>
+    </tr>
     <tr><th>Iron Properties</th></tr>
     <tr>
       <td><label>Core's center leg width (mm)</label></td>
-      <td><input type="number" id="leg" step="0.1" placeholder="center leg width"></td>
+      <td><input type="number" id="leg" step="0.1" value=25.4></td>
     </tr>
     <tr>
       <td><label>Core's laminate stacking thickness (mm)</label></td>
-      <td><input type="number" id="thick" step="0.1" placeholder="laminate stacking thickness"></td>
+      <td><input type="number" id="thick" step="0.1" value=25.4></td>
     </tr>
     <tr>
       <td><label>Core's iron maximum flux density (Tesla)</label></td>
-      <td><input type="number" id="flux" step="0.1" placeholder="maximum flux density"></td>
+      <td><input type="number" id="flux" step="0.1" value=0.6></td>
     </tr>
     <tr><th>Voltage Specifications</th></tr>
     <tr>
       <td><label>Primary voltage (Volts)</label></td>
-      <td><input type="number" id="pri-v" step="0.1" placeholder="primary voltage"></td>
+      <td><input type="number" id="pri-v" step="0.1" value=230></td>
     </tr>
     <tr>
       <td><label>Secondary voltage (Volts)</label></td>
-      <td><input type="number" id="sec-v" step="0.1" placeholder="secondary voltage"></td>
+      <td><input type="number" id="sec-v" step="0.1" value=35></td>
+    </tr>
+    <tr><th>Winding Factors</th></tr>
+    <tr>
+      <td><label>Stacking Factor (%)</label></td>
+      <td><input type="number" id="stacking" value="10"></td>
     </tr>
     <tr>
       <td><button id="calc" onclick="calculate()">Calculate</button></td>
