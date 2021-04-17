@@ -15,9 +15,12 @@ function recalc() {
   newValue = document.getElementById("thick").value *  factor; 
   document.getElementById("thick").value = newValue.toFixed(2);
   prevUnit = newUnit; // track current unit
+  calculate();
 }
 
 function calculate() {
+  let k = 4.44;
+  if (document.getElementById("shape").value == "square") k = 4;
   let f = document.getElementById("freq").value;
   let B = document.getElementById("flux").value; // Tesla
   let w = document.getElementById("leg").value;
@@ -29,16 +32,16 @@ function calculate() {
   if (newUnit=="cm") factor = 1/100; // cm to m
   if (newUnit=="in") factor = 2.54/100; // in to m
   let A = (1-sf/100) * w * t * factor*factor; // square meters
-  let TPV = calculateTurnsPerVolt(f, B, A);
+  let TPV = calculateTurnsPerVolt(k, f, B, A);
   let priV = document.getElementById("pri-v").value;
   let secV = document.getElementById("sec-v").value;
   document.getElementById("pri-n").value = Math.floor(TPV * priV + 1);
   document.getElementById("sec-n").value = Math.floor(TPV * secV + 1);
 }
 
-function calculateTurnsPerVolt(f, B, A) {
+function calculateTurnsPerVolt(k, f, B, A) {
   // formula TPV = = 1/(k*f*B*A)
-  // f = in Hertz, Tesla, square meter
-  let TPV = 1/(4.44 * f * B * A); 
+  // f = in Hertz, B = Tesla, A = square meter
+  let TPV = 1/(k * f * B * A); 
   return TPV;
 }
