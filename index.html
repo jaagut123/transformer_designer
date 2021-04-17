@@ -4,10 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tranformer Designer</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" href="main.css"></link>
 </head>
 <body>
   <h1>Welcome to my Transformer Designer Page</h1>
+  <form>
+    <label>Iron Properties</label>
+    <input type="text" id="leg" placeholder="center leg width">
+    <input type="text" id="thick" placeholder="laminate stacking thickness">
+    <input type="text" id="flux" placeholder="maximum flux density">
+    <label>Voltage Specifications</label>
+    <input type="text" id="pri-v" placeholder="primary voltage">
+    <input type="text" id="sec-v" placeholder="secondary voltage">
+    <button id="calc" onclick="" value="Calculate"></button>
+  </form>
 </body>
 </html>
