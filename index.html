@@ -10,7 +10,7 @@
 </head>
 <body>
   <h1>Welcome to my Transformer Designer Page</h1>
-  <h3>EI Tranformer</h3>
+  <h3>Applicable to EI or Toroid Tranformer</h3>
   <table>
     <tr><th>Select Unit of Measurement</th></tr>
     <tr>
@@ -53,12 +53,21 @@
       <td><label>Line Frequency (Hertz)</label></td>
       <td><input type="number" id="freq" value=60 min=1 max=1000000000></td>
     </tr>
+    <tr>
+      <td><label>Wave Shape</label></td>
+      <td>
+        <select id="shape" value="sine">
+          <option value="sine">sine wave</option>
+          <option value="square">square wave</option>
+        </select>
+      </td>
+    </tr>
     <tr><th>Winding Factors</th></tr>
     <tr>
       <td><label><div class="tooltip">Stacking Factor (%)
         <span class="tooltiptext">Stacking factor is the amount of gap between the laminates stacking
         expressed in percentage.</span></div></label></td>
-      <td><input type="number" id="stacking" value="10" min=1 max=99></td>
+      <td><input type="number" id="stacking" value="10" min=0 max=100></td>
     </tr>
     <tr>
       <td><button id="calc" onclick="calculate()">Calculate</button></td>
