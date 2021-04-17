@@ -9,8 +9,11 @@ function recalc() {
   if (prevUnit=="cm" && newUnit=="in") factor = 1/2.54;
   if (prevUnit=="in" && newUnit=="mm") factor = 25.4;
   if (prevUnit=="in" && newUnit=="cm") factor = 2.54;
-  document.getElementById("leg").value *= factor; 
-  document.getElementById("thick").value *=  factor; 
+  let newValue;
+  newValue = document.getElementById("leg").value * factor; 
+  document.getElementById("leg").value = newValue.toFixed(2);
+  newValue = document.getElementById("thick").value *  factor; 
+  document.getElementById("thick").value = newValue.toFixed(2);
   prevUnit = newUnit; // track current unit
 }
 
