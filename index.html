@@ -33,7 +33,11 @@
       <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400></td>
     </tr>
     <tr>
-      <td><label>Core's iron maximum flux density (Tesla)</label></td>
+      <td><label><div class="tooltip">Core's iron maximum flux density (Tesla)
+        <span class="tooltiptext">The maximum flux density plays an important role in the transformer.
+        It specifies the maximum value at which the iron core saturates. When the core saturates, it
+        can no longer generate additional magnetic flux which makes the transformer ineffective.</span>
+        </div></label></td>
       <td><input type="number" id="flux" step="0.1" value=0.6 min=0.1 max=5.0></td>
     </tr>
     <tr><th>Voltage And Frequency Specifications</th></tr>
@@ -52,7 +56,8 @@
     <tr><th>Winding Factors</th></tr>
     <tr>
       <td><label><div class="tooltip">Stacking Factor (%)
-        <span class="tooltiptext">Stacking factor is the amount of gap between the laminates stacking.</span></div></label></td>
+        <span class="tooltiptext">Stacking factor is the amount of gap between the laminates stacking
+        expressed in percentage.</span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=1 max=99></td>
     </tr>
     <tr>
