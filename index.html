@@ -10,7 +10,7 @@
 </head>
 <body>
   <h1>Welcome to my Transformer Designer Page</h1>
-  <h3>Applicable to EI or Toroid Tranformer</h3>
+  <h3>Applicable to EI and Toroid Transformer</h3>
   <table>
     <tr><th>Select Unit of Measurement</th></tr>
     <tr>
@@ -25,11 +25,21 @@
     </tr>
     <tr><th>Iron Properties</th></tr>
     <tr>
-      <td><label>Core's center leg width</label></td>
+      <td><label><div class="tooltip">Core's center leg width
+        <span class="tooltiptext">The center leg width is the E's middle leg width. Since torroid has no leg, 
+          this should be the height or breadth of the torroid. For rounded or semi-rounded toroids such as 
+          Ferrite core or Powdered iron core, this should the cross section area of the torroid divide by two.</span>
+      </div></label></td>
       <td><input type="number" id="leg" step="0.01" value=25.4 min=0.1 max=25400></td>
     </tr>
     <tr>
-      <td><label>Core's laminate stacking thickness</label></td>
+      <td><label><div class="tooltip">Core's laminate stacking thickness
+        <span class="tooltiptext">This is the height of the laminate's stacking. For torroid, since the
+          laminates is continuously wounded around in circle, the thickness can be determined by taking the 
+          torroid's outside diameter 'D', minus the inside diameter 'd', and then divide by two or (D-d)/2.
+          For rounded or semi-rounded toroids such as Ferrite core or Powdered iron core, this should the 
+          cross section area of the torroid divide by two.</span>
+      </div></label></td>
       <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400></td>
     </tr>
     <tr>
@@ -56,7 +66,7 @@
     </tr>
     <tr>
       <td><label><div class="tooltip">Wave Shape
-        <span class="tooltiptext">For mains supply, shape is sine wave, but for SMPS transformer, 
+        <span class="tooltiptext">For mains supply, the shape is sine wave. For SMPS transformer, 
           this is usually a square wave.</span>
         </div></label></td>
       <td>
@@ -69,8 +79,8 @@
     <tr><th>Stacking Factors</th></tr>
     <tr>
       <td><label><div class="tooltip">Stacking Factor (%)
-        <span class="tooltiptext">For laminated core, stacking factor is the amount of gap 
-          between the laminate stackings expressed in percentage, default is 10%. For ferrite core or 
+        <span class="tooltiptext">For laminated core, stacking factor is the amount of gaps in 
+          between the laminate stackings expressed as percentage, default is 10%. For ferrite core or 
           iron powder core, since it has no laminates, this should be 0.</span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=0 max=100></td>
     </tr>
