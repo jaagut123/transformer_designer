@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,76 @@
   <script src="main.js"></script>
   <link rel="stylesheet" href="main.css"></link>
 </head>
-<body>
+<body onload="initp2()">
   <h1>Transformer Designer Page 2</h1>
+  <h3>Applicable to Wasteless EI Transformers Only</h3>
+  <h5><em>Note: </em>For a standard wasteless EI core, 
+    all other core dimensions can be inferred from the leg dimension.
+    Therefore, window area (height and length) of the core can be 
+    calculated based on the leg dimension. The input is provided with 
+    this default.  For other design such as double E configuration, you may 
+    modify the window length by doubling the length.
+  </h5>
+  <table>
+    <tr>
+      <td><label>Core's center leg width (<span class="unit"></span>)</label></td>
+      <td><input type="text" id="leg" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Number of turns - Primary</label></td>
+      <td><input type="text" id="pri-n" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Number of turns - Secondary</label></td>
+      <td><input type="text" id="sec-n" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Window height (<span class="unit"></span>)</label></td>
+      <td><input type="number" id="winh" step=0.01></td>
+    </tr>
+    <tr>
+      <td><label>Window length (<span class="unit"></span>)</label></td>
+      <td><input type="number" id="winl" step=0.01></td>
+    </tr>
+    <tr>
+      <td><label><div class="tooltip">Window Factor (%)<span class="tooltiptext">
+          The window factor is the percentage to be deducted in the window area
+          dedicated to bobbin thickness, layer insulation thickness, and your 
+          effectiveness in layering out the wires around the bobbin. The value 
+          is somewhere from 20% to 50%. 
+      </span></div></label></td>
+      <td><input type="number" id="winf" step=0.01 min=20 max=50 value=30></td>
+    </tr>
+    <!--
+    <tr>
+      <td><label><div class="tooltip">Center Tap<span class="tooltiptext">
+        Use this option if you want to make a center tap on the secondary winding.
+        However by making a center tap, each half winding will be the original 
+        secondary voltage divided by two. If this is not what you want, just 
+        double the original secondary voltage in the previous calculation.
+      </span></div></label></td>
+      <td><input type="checkbox" id="tap"></td>
+    </tr>
+    -->
+    <tr>
+      <td><button id="calc" onclick="simulate()">Calculate Wire Size</button></td>
+    </tr>
+    <tr>
+      <td><label>Wire size - Primary AWG</label></td>
+      <td><input type="text" id="wirep" disabled></td>
+    </tr>
+    <tr>
+      <td><label>Wire size - Secondary AWG</label></td>
+      <td><input type="text" id="wires" disabled></td>
+    </tr>
+    <tr>
+        <td><label>Ampacity - Primary</label></td>
+        <td><input type="text" id="ampp" disabled></td>
+      </tr>
+      <tr>
+        <td><label>Ampacity - Secondary</label></td>
+        <td><input type="text" id="amps" disabled></td>
+      </tr>
+    </table>  
 </body>
 </html>
