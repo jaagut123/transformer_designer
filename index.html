@@ -8,9 +8,9 @@
   <script src="main.js"></script>
   <link rel="stylesheet" href="main.css"></link>
 </head>
-<body>
+<body onload="init()">
   <h1>Welcome to my Transformer Designer Page</h1>
-  <h3>Applicable to EI and Toroid Transformer</h3>
+  <h3>Applicable to EI and Toroid Transformers</h3>
   <table>
     <tr><th>Select Unit of Measurement</th></tr>
     <tr>
@@ -30,7 +30,7 @@
           this should be the height or breadth of the torroid. For rounded or semi-rounded toroids such as 
           Ferrite core or Powdered iron core, this should the square root of cross section area of the torroid.</span>
       </div></label></td>
-      <td><input type="number" id="leg" step="0.01" value=25.4 min=0.1 max=25400></td>
+      <td><input type="number" id="leg" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label><div class="tooltip">Core's laminate stacking thickness
@@ -40,7 +40,7 @@
           For rounded or semi-rounded toroids such as Ferrite core or Powdered iron core, this should the 
           square root of cross section area of the torroid.</span>
       </div></label></td>
-      <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400></td>
+      <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label><div class="tooltip">Core's iron maximum flux density (Tesla)
@@ -49,20 +49,20 @@
           becomes ineffective because it can no longer generate additional magnetic flux. Manufactuer's, 
           data specifies the maximum flux density, so use it here. With no data, it defaults to 0.6 Tesla</span>
         </div></label></td>
-      <td><input type="number" id="flux" step="0.01" value=0.6 min=0.1 max=5.0></td>
+      <td><input type="number" id="flux" step="0.01" value=0.6 min=0.1 max=5.0 onchange="hideAnchor()"></td>
     </tr>
     <tr><th>Voltage And Frequency Specifications</th></tr>
     <tr>
       <td><label>Primary voltage (Volts)</label></td>
-      <td><input type="number" id="pri-v" step="0.1" value=230 min=1 max=10000></td>
+      <td><input type="number" id="pri-v" step="0.1" value=230 min=1 max=10000 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label>Secondary voltage (Volts)</label></td>
-      <td><input type="number" id="sec-v" step="0.1" value=35  min=1 max=10000></td>
+      <td><input type="number" id="sec-v" step="0.1" value=35  min=1 max=10000 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label>Line Frequency (Hertz)</label></td>
-      <td><input type="number" id="freq" value=60 min=1 max=1000000000></td>
+      <td><input type="number" id="freq" value=60 min=1 max=1000000000 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label><div class="tooltip">Wave Shape
@@ -70,7 +70,7 @@
           this is usually a square wave.</span>
         </div></label></td>
       <td>
-        <select id="shape" value="sine">
+        <select id="shape" value="sine" onchange="hideAnchor()">
           <option value="sine">sine wave</option>
           <option value="square">square wave</option>
         </select>
@@ -82,20 +82,20 @@
         <span class="tooltiptext">For laminated core, stacking factor is the amount of gaps in 
           between the laminate stackings expressed as percentage, default is 10%. For ferrite core or 
           iron powder core, since it has no laminates, this should be 0.</span></div></label></td>
-      <td><input type="number" id="stacking" value="10" min=0 max=100></td>
+      <td><input type="number" id="stacking" value="10" min=0 max=100 onchange="hideAnchor()"></td>
     </tr>
     <tr>
-      <td><button id="calc" onclick="calculate()">Calculate</button></td>
+      <td><button id="calc" onclick="calculate()">Calculate Winding Turns</button></td>
     </tr>
     <tr>
-      <td><label>Calculated number of turns - primary</label></td>
+      <td><label>Calculated number of turns - Primary</label></td>
       <td><input type="text" id="pri-n" disabled></td>
     </tr>
     <tr>
-      <td><label>Calculated number of turns - secondary</label></td>
+      <td><label>Calculated number of turns - Secondary</label></td>
       <td><input type="text" id="sec-n" disabled></td>
     </tr>
     </table>  
-  <a href="p2calcwire.html">Page 2</a>
+    <a id="page2" href="#" style="display:none">Next - Calculate Wire Size</a>
 </body>
 </html>
