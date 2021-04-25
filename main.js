@@ -176,8 +176,8 @@ function simulate() {
   let d2 = d1 * n1/n2;
   awgPrimary = toAWG(d1);
   awgSecondary = toAWG(d2);
-  document.getElementById("wirep").value = awgPrimary;
-  document.getElementById("wires").value = awgSecondary;
+  document.getElementById("wirep").value = toAWGString(awgPrimary);
+  document.getElementById("wires").value = toAWGString(awgSecondary);
   document.getElementById("ampp").value = ampacity(awgPrimary);
   document.getElementById("amps").value = ampacity(awgSecondary);
 }
@@ -193,6 +193,15 @@ function toAWG(dia) {
 
   AWG = 36 - 39 *( Math.log(dia/factor)/Math.log(92) );
   return Math.round(AWG);
+}
+
+function toAWGString(awg) {
+  switch(awg) {
+    case -1: return "00";
+    case -2: return "000";
+    case -3: return "0000";
+    default: return awg;
+  }
 }
 
 
