@@ -205,7 +205,7 @@ function toAWG(dia) {
 
   if (qobj.unit == "mm") factor = 0.127;
   if (qobj.unit == "in") factor = 0.005;
-  if (qobj.unit == "cm") factor = 1.270;
+  if (qobj.unit == "cm") factor = 0.0127;
 
   AWG = 36 - 39 *( Math.log(dia/factor)/Math.log(92) );
   return Math.round(AWG);
