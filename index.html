@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   <title>Tranformer Designer</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" href="main.css"></link>
+  <link rel="icon" href="./favicon.ico">
 </head>
 <body onload="init()">
   <h1>Welcome to my Transformer Designer Page</h1>
-  <h3>Applicable to EI and Toroid Transformers</h3>
+  <h3>Applicable to EI, EE, CI, UI Transformers</h3>
   <table>
     <tr><th>Select Unit of Measurement</th></tr>
     <tr>
@@ -26,16 +28,14 @@
     <tr><th>Iron Properties</th></tr>
     <tr>
       <td><label><div class="tooltip">Core's center leg width
-        <span class="tooltiptext">The center leg width is the E's middle leg width. Since torroid has no leg, 
-          this should be the height or breadth of the torroid. For rounded or semi-rounded toroids such as 
-          ferrite core or powdered iron core, this should the square root of cross section area of the torroid.
+        <span class="tooltiptext">The center leg width is the E's middle leg width.
           <br><img src="./coreleg.png" alt="inner diameter" width="200px"></img></span>
       </div></label></td>
       <td><input type="number" id="leg" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label><div class="tooltip">Core's laminate stacking thickness
-        <span class="tooltiptext">This is the height of the laminate's stacking.
+        <span class="tooltiptext">The laminate's stacking thickness is the stacking height.
           <br><img src="./corethick.png" alt="inner diameter" width="200px"></img></span>
       </div></label></td>
       <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
@@ -44,8 +44,8 @@
       <td><label><div class="tooltip">Core's iron maximum flux density (Tesla)
         <span class="tooltiptext">The maximum flux density plays an important role in the transformer.
           It specifies the limit where the iron core starts to saturate. When the core saturates, it
-          becomes ineffective because it can no longer generate additional magnetic flux. Manufactuer's, 
-          data specifies the maximum flux density, so use it here. With no data, it defaults to 0.6 Tesla</span>
+          becomes ineffective because it can no longer generate additional magnetic flux. If manufactuer's
+          data is available, use it here. If no data, we assume 0.6 Tesla.</span>
         </div></label></td>
       <td><input type="number" id="flux" step="0.01" value=0.6 min=0.1 max=5.0 onchange="hideAnchor()"></td>
     </tr>
@@ -64,8 +64,8 @@
     </tr>
     <tr>
       <td><label><div class="tooltip">Wave Shape
-        <span class="tooltiptext">For mains supply, the shape is sine wave. For SMPS transformer, 
-          this is usually a square wave.</span>
+        <span class="tooltiptext">For mains supply, the shape is standard sine wave. For SMPS applications, 
+          you may want to use square wave.</span>
         </div></label></td>
       <td>
         <select id="shape" value="sine" onchange="hideAnchor()">
@@ -79,7 +79,7 @@
       <td><label><div class="tooltip">Stacking Factor (%)
         <span class="tooltiptext">For laminated core, stacking factor is the amount of gaps in 
           between the laminate stackings expressed as percentage, default is 10%. For ferrite core or 
-          iron powder core, since it has no laminates, this should be 0.</span></div></label></td>
+          iron powder core, since it has no laminates, you may replace this to zero (0).</span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=0 max=100 onchange="hideAnchor()"></td>
     </tr>
     <tr>
