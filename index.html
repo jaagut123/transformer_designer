@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   <title>Tranformer Designer</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" href="main.css"></link>
+  <link rel="icon" href="./favicon.ico">
 </head>
 <body onload="init()">
   <h1>Welcome to my Transformer Designer Page</h1>
@@ -35,11 +37,7 @@
     </tr>
     <tr>
       <td><label><div class="tooltip">Core's laminate stacking thickness
-        <span class="tooltiptext">This is the height of the laminate's stacking. For torroid, since the
-          laminates is continuously wounded around in circle, the thickness can be determined by taking the 
-          torroid's outside diameter 'D', minus the inside diameter 'd', and then divide by two or (D-d)/2.
-          For rounded or semi-rounded toroids such as ferrite core or powdered iron core, this should the 
-          square root of cross section area of the torroid.
+        <span class="tooltiptext">This is the height of the laminate's stacking.
           <br><img src="./corethick.png" alt="inner diameter" width="200px"></img></span>
       </div></label></td>
       <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>

@@ -168,12 +168,12 @@ function initp2() {
 
 function simulate() {
   // effective wa = window area * (1 - factor/100)
-  // ratio of turns to diameter: N1/N2 = E1/E2 = I2/I1 = D2/D1
-  // D2 = D1 * N1/N2
+  // ratio of turns to area: N1/N2 = E1/E2 = I2/I1 = D2^2/D1^2
+  // D2^2 = D1^2 * N1/N2
   // wa = N1*D1^2  + N2 * D2^2
-  // wa = N1*D1*D1 + N2 * D1*D1 * N1*N1/(N2*N2)
-  // wa = D1*D1 * (N1 + N2 * N1*N1/(N2*N2))
-  // D1 = sqrt(wa / (N1 + N2 * N1*N1/(N2*N2)))
+  // wa = N1*D1^2 + N2 * D1^2 * N1/N2
+  // wa = D1^2 * (N1 + N1)
+  // D1 = sqrt(wa / (2 * N1))
 
   let n1 = qobj.pturns;
   let n2 = qobj.sturns;
@@ -183,9 +183,9 @@ function simulate() {
   let P1 = 2 * (11/8*L + H);
   let P2 = 2 * (7/4*L + H);
   let wa = H * L * f;
-  let denom = parseFloat(n1) + parseFloat(n2 * n1**2/n2**2);
+  let denom = parseFloat(2 * n1);
   let d1 = Math.sqrt(wa/denom);
-  let d2 = d1 * n1/n2;
+  let d2 = Math.sqrt(d1*d1 * n1/n2);
   awgPrimary = toAWG(d1);
   awgSecondary = toAWG(d2);
   document.getElementById("wirep").value = toAWGString(awgPrimary);
