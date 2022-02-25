@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="main.css"></link>
 </head>
 <body onload="initp2()">
-  <h1>Transformer Designer Page 2</h1>
-  <h3>Applicable to Wasteless EI Transformers Only</h3>
+  <h2>Transformer Designer Page 2</h2>
+  <h3>Applicable to EI, EE, CI, UI Transformers</h3>
   <h5><em>Note: </em>For a standard wasteless EI core, 
     all other core dimensions can be inferred from the leg dimension.
     Therefore, window area (height and length) of the core can be 
@@ -37,7 +37,7 @@
           <span class="tooltiptext">The winding window height.
           <br><img src="./win_height.png" alt="inner diameter" width="200px"></img></span>
         </div></label></td>
-      <td><input type="number" id="winh" step=0.01></td>
+      <td><input type="number" id="winh" step=0.01 min=1 max=10000></td>
     </tr>
     <tr>
       <td><label>
@@ -45,10 +45,10 @@
           <span class="tooltiptext">The winding window length.
           <br><img src="./win_width.png" alt="inner diameter" width="200px"></img></span>
         </div></label></td>
-      <td><input type="number" id="winl" step=0.01></td>
+      <td><input type="number" id="winl" step=0.01 min=1 max=10000></td>
     </tr>
     <tr>
-      <td><label><div class="tooltip">Window Factor (%)<span class="tooltiptext">
+      <td><label><div class="tooltip">Window factor (%)<span class="tooltiptext">
           The window factor is the percentage to be deducted in the window area
           dedicated to bobbin thickness, layer insulation thickness, and your 
           effectiveness in layering out the wires around the bobbin. The value 
@@ -79,21 +79,25 @@
       <td><input type="text" id="wires" disabled></td>
     </tr>
     <tr>
-        <td><label>Ampacity - Primary</label></td>
+        <td><label>Wire ampacity - Primary</label></td>
         <td><input type="text" id="ampp" disabled></td>
       </tr>
     <tr>
-      <td><label>Ampacity - Secondary</label></td>
+      <td><label>Wire ampacity - Secondary</label></td>
       <td><input type="text" id="amps" disabled></td>
     </tr>
-      <td><label>Weight - Primary (kgs)</label></td>
+      <td><label>Wire weight - Primary (kgs)</label></td>
       <td><input type="text" id="kgsP" disabled></td>
     </tr>
   <tr>
   <tr>
-      <td><label>Weight - Secondary (kgs)</label></td>
+      <td><label>Wire weight - Secondary (kgs)</label></td>
       <td><input type="text" id="kgsS" disabled></td>
     </tr>
-    </table>  
+    </table>
+    <br>
+    Copyright &copy; 2022 by J.A.Agutaya
+    <br>
+    All right reserved.
 </body>
 </html>
