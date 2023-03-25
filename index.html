@@ -29,14 +29,14 @@
     <tr>
       <td><label><div class="tooltip">Core's center leg width
         <span class="tooltiptext">The center leg width is the E's middle leg width.
-          <br><img src="./coreleg.png" alt="inner diameter" width="200px"></img></span>
+          <br><img src="./coreleg.png" alt="center leg" width="200px"></img></span>
       </div></label></td>
       <td><input type="number" id="leg" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
     </tr>
     <tr>
       <td><label><div class="tooltip">Core's laminate stacking thickness
         <span class="tooltiptext">The laminate's stacking thickness is the stacking height.
-          <br><img src="./corethick.png" alt="inner diameter" width="200px"></img></span>
+          <br><img src="./corethick.png" alt="stacking thickness" width="200px"></img></span>
       </div></label></td>
       <td><input type="number" id="thick" step="0.01" value=25.4 min=0.1 max=25400 onchange="hideAnchor()"></td>
     </tr>
@@ -78,8 +78,10 @@
     <tr>
       <td><label><div class="tooltip">Stacking factor (%)
         <span class="tooltiptext">For laminated core, stacking factor is the amount of gaps in 
-          between the laminate stackings expressed as percentage, default is 10%. For ferrite core or 
-          iron powder core, since it has no laminates, you may replace this to zero (0).</span></div></label></td>
+          between the laminate stackings expressed as percentage, usually it is assumed 10%. For ferrite core or 
+          iron powder core, since it has no laminates, you may set this value to zero (0).
+          <br><img src="./corestack.png" alt="stack factor" width="200px"></img>
+        </span></div></label></td>
       <td><input type="number" id="stacking" value="10" min=0 max=100 onchange="hideAnchor()"></td>
     </tr>
     <tr>
